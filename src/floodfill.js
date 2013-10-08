@@ -1,5 +1,11 @@
-function floodFill(bitmap, replacementColor, tolerance, start) {
+function floodFill(bitmap, replacementColor, tolerance, x, y) {
+    
     var RGBA = 4;
+    
+    x = x || 0;
+    y = y || 0;
+
+    var start = getPixelArrayIndex(x, y);
 
     var queue = [];
 
@@ -25,7 +31,7 @@ function floodFill(bitmap, replacementColor, tolerance, start) {
         }
     }(
         start || 0,
-        Array.prototype.slice.call(bitmap.data, start, RGBA),
+        Array.prototype.slice.call(bitmap.data, start, start + RGBA),
         replacementColor || [ 0, 0, 0, 0],
         tolerance || 10
     ));
@@ -67,4 +73,8 @@ function floodFill(bitmap, replacementColor, tolerance, start) {
 
         return node + n * RGBA;
     };
+
+    function getPixelArrayIndex(x, y) {
+        return (y * bitmap.width + x) * RGBA;
+    }
 }
