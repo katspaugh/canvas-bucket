@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
 
     var bitmap = cc.getImageData(0, 0, canvas.width, canvas.height);
     cc.clearRect(0, 0, canvas.width, canvas.height);
-    floodFill(bitmap, [ 0, 255, 0, 128 ], 100);
+    floodFill(bitmap, [ 0, 255, 255, 128 ], 100, 0, 0);
     cc.putImageData(bitmap, 0, 0);
 
     var filledImage = document.createElement('img');
