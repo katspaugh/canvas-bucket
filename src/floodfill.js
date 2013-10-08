@@ -2,7 +2,7 @@ function floodFill(bitmap, replacementColor, tolerance, x, y) {
     
     var RGBA = 4;
 
-    var start = getPixelArrayIndex(bitmap,x,y);
+    var start = getPixelArrayIndex(bitmap, x, y);
 
     var queue = [];
 
