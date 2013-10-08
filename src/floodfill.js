@@ -1,8 +1,11 @@
 function floodFill(bitmap, replacementColor, tolerance, x, y) {
     
     var RGBA = 4;
+    
+    x = x || 0;
+    y = y || 0;
 
-    var start = getPixelArrayIndex(bitmap, x, y);
+    var start = getPixelArrayIndex(x, y);
 
     var queue = [];
 
@@ -71,7 +74,7 @@ function floodFill(bitmap, replacementColor, tolerance, x, y) {
         return node + n * RGBA;
     };
 
-    function getPixelArrayIndex(bitmap, x, y) {
-        return i = (y * bitmap.width + x) * 4;
+    function getPixelArrayIndex(x, y) {
+        return (y * bitmap.width + x) * RGBA;
     }
 }
