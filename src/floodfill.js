@@ -28,7 +28,7 @@ function floodFill(bitmap, replacementColor, tolerance, x, y) {
         }
     }(
         start || 0,
-        Array.prototype.slice.call(bitmap.data, start, start+RGBA),
+        Array.prototype.slice.call(bitmap.data, start, start + RGBA),
         replacementColor || [ 0, 0, 0, 0],
         tolerance || 10
     ));
